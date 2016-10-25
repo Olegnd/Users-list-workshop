@@ -1,5 +1,6 @@
 <!doctype html>
-  <head>
+<html>  
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
@@ -9,16 +10,26 @@
     <script type="text/javascript">
       pageName="create";
     </script>
-
     <meta name="mobile-web-app-capable" content="yes">
-  </head>
-  <body>
-
+</head>
+    
+<body>
     <main>
-      
+        <form id="create-page">
+            <p>name</p>
+                <input class='name' type="text" name=""/>
+            <p>password</p>
+                <input class='password' type="text" name=""/>
+            <p>email</p>
+                <input class='email' type="text" name=""/>
+            <p>comment</p>
+                <input class='comment' type="text" name=""/>
+            <p>
+                <input type="submit" value="Submit" class="buttom" />
+            </p>                
+
+        </form>
     </main>
-
-
     <script src="../dist/app.js"> </script>
-  </body>
+</body>
 </html>
