@@ -41,9 +41,10 @@ export default function initPage() {
 					tr = document.createElement('tr');
 					i = 0;
 					for (i; i < arrayKey.length - 1; i++) {
-						td[i] = '<td>' + data[index][arrayKey[i]] + '</td>';
+						td[i] = `<td>${data[index][arrayKey[i]]}</td>`;
 					}
-					arrayTrTbody[index] = '<tr>' + td.join('') + '</tr>';
+					arrayTrTbody[index] = `<tr>${td.join('')}<td><input class="edit_buttom" id="${data[index]._id}" type="submit" value="edit" /></td><td><input class="delete_buttom" id="${data[index]._id}" type="submit" value="delete" /></td></tr>`;
+					console.log(arrayTrTbody);
 					tr.innerHTML = arrayTrTbody[index];
 					tbody.appendChild(tr);
 				}
@@ -52,6 +53,11 @@ export default function initPage() {
 		)
 		.catch(function (err) {
 			console.log('Fetch Error :-S', err);
+		});
+		
+		document.querySelector('.delete_buttom').addEventListener('submit', function (event) {
+        event.preventDefault();
+		
 		});
 
 }
