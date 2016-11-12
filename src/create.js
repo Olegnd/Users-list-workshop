@@ -8,7 +8,7 @@ export default function initPage() {
         event.preventDefault();
     
     var input = document.querySelector('input');
-    var id = document.querySelector('.id').value;
+    //var id = document.querySelector('.id').value;
     var name = document.querySelector('.name').value;
     var password = document.querySelector('.password').value;
     var email = document.querySelector('.email').value;
@@ -24,7 +24,7 @@ export default function initPage() {
         mode: 'cors',   // ставим режим кросс доменных запросов
         cache: 'default', // кеширование по умолчанию
         body: JSON.stringify({   /// добавляем данные к запросу
-            id: id,
+            //id: id,
             name: name,
             password: password,
             email: email,
