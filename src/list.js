@@ -57,7 +57,7 @@ export default function initPage() {
 			for (i; i < arrayKey.length - 1; i++) {
 				td[i] = `<td>${data[index][arrayKey[i]]}</td>`;
 			}
-			arrayTrTbody[index] = `<tr>${td.join('')}<td><a href="http://193.111.63.76:3000/api/v1/Users/${data[index]._id}" class="edit_button" role="button">edit</a></td><td><button id="${data[index]._id}" class="delete_button"  type="submit">delete</button></td></tr>`;
+			arrayTrTbody[index] = `<tr>${td.join('')}<td><a href="http://localhost:3000/pages/edit-page.html?${data[index]._id}" class="edit_button" role="button">edit</a></td><td><button id="${data[index]._id}" class="delete_button"  type="submit">delete</button></td></tr>`;
 			//arrayTrTbody[index] = `<tr>${td.join('')}<td><input id="${data[index]._id}" class="edit_buttom" type="submit" value="edit" /></td><td><input id="${data[index]._id}" class="delete_buttom"  type="submit" value="delete" /></td></tr>`;
 			//console.log(arrayTrTbody);
 			tr.innerHTML = arrayTrTbody[index];
@@ -86,7 +86,8 @@ export default function initPage() {
 			var classTargetEl = $(targetEl).attr('class');
 			console.log('classTargetEl', classTargetEl);
 			if (classTargetEl === 'delete_button') {
-			var idTargetEl = $(targetEl).attr('id');
+			var idTargetEl;
+			idTargetEl = $(targetEl).attr('id');
 			console.log('targetEl', targetEl);
 			console.log('delete');
 			console.log('id', idTargetEl);
@@ -104,7 +105,7 @@ export default function initPage() {
 				.then(function (response) {
 					console.log(response);
 					if (response.status >= 200 && response.status < 300) {
-						window.location = '/pages/list-page.html';
+						//window.location = '/pages/list-page.html';
 						return response.json();
 					}
 					else {
@@ -120,10 +121,11 @@ export default function initPage() {
 			console.log('Fetch Error :-S', err);
 		});
 			}
-			if (classTargetEl === 'edit_button') {
-			window.location = '/pages/edit-page.html';	
+		/*	if (classTargetEl === 'edit_button') {
+				console.log('idTargetEl', idTargetEl);
+			window.location = `/pages/edit-page.html?${idTargetEl}`;	
 
-			}
+			}*/
 		});
 	}
 }
